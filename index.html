@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tm2020ch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn.xjk.yt/g/favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Download File" />
+    <meta property="og:description" content="A page to download the Chinese version of Trackmania 2020" />
+    <meta property="og:url" content="https://tm2020ch.xjk.yt" />
+    <meta property="og:image" content="https://tm2020ch.xjk.yt/content/img/og-img-preview.png" />
+</head>
+
+<body>
+    <canvas id="dotCanvas"></canvas>
+
+    <div class="modal">
+        <h1>Download the Tm2020Ch setup File</h1>
+
+        Trackmania China is something that exists, here is a download link to the setup file. <br>
+
+        <div class="flex-container input-area">
+            <button onclick="downloadFileFromURL();">💾 Download</button>
+        </div>
+    </div>
+
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.xjk.yt/glob/background-dots.js"></script>
+
+    <script>
+        function downloadFileFromURL() {
+            const fileURL = "https://cdn.xjk.yt/tm2020-ch/Trackmania2020_Setup_CH.exe";
+
+            const a = document.createElement('a');
+            a.href = fileURL;
+            a.download = 'Trackmania2020_Setup_CH.exe';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            showNotification("File is being downloaded!");
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.classList.add('notification-message');
+            notification.textContent = message;
+
+            const container = document.getElementById('notificationContainer');
+            container.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    container.removeChild(notification);
+                }, 500);
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
