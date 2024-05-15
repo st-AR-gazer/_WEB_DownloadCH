@@ -16,6 +16,7 @@ body {
     align-items: center;
     color: #e0e0e0;
 }
+
 canvas#dotCanvas {
     position: fixed;
     top: 0;
@@ -33,152 +34,85 @@ canvas#dotCanvas {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 650px;
+    max-width: 900px;
     margin: auto;
-}
-
-@media (max-width: 903px){
-    .modal {
-        max-width: 80%;
-    }
-}
-
-h1 {
     color: #e0e0e0;
-    margin-bottom: 16px;
-    font-size: 24px;
 }
 
-.text-field {
-    background: #2c2c2c;
-    border: 2px solid #333;
-    border-radius: 5px;
-    color: #888;
-    padding: 10px;
-    overflow-x: auto;
-    white-space: nowrap;
+.file-info {
     display: flex;
-    align-items: center;
-    min-height: 17px;
-    width: 90%;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Style for dark-themed scrollbar */
-html::-webkit-scrollbar {
-    height: 10px;
-    background: #2c2c2c;
-}
-
-html::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 5px;
-}
-
-html::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-/* For Firefox */
-html {
-    scrollbar-color: #444 #2c2c2c;
-    scrollbar-width: thin;
-}
-
-/* Hide scrollbar for IE, Edge, and Firefox */
-html {
-    -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
-}
-
-html::-webkit-scrollbar {
-    display: none;
-}
-
-
-.flex-container {
+.file-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
 }
 
-.input-area, .output-area {
-    width: 100%;
+.file-icon {
+    width: 100px;
+    height: 100px;
 }
 
-input[type="text"], .output-container, .preview-area {
-    font-size: 14px;
-    padding: 8px;
-}
-
-input[type="text"] {
+.file-details {
     flex-grow: 1;
-    border: 2px solid #333;
-    border-radius: 5px;
-    background: #2c2c2c;
-    color: white;
-    margin-right: 8px;
+    padding-left: 20px;
 }
 
-.settings-area > button {
-    background-color: #444;
+.file-details > p {
+    margin: 0 0 5px 0;
 }
 
-.settings-area > button:hover {
-    background-color: #888;
-}
-
-button {
-    font-size: 14px;
-    padding: 8px;
-    background-color: #4CAF50;
+.download-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    min-width: 40px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-button:hover {
-    background-color: #45a049;
+.download-button:hover {
+    background-color: #0056b3;
 }
 
-#outputString, .preview-area {
-    background: #333;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    white-space: pre-wrap;
-}
-
-.preview-area {
-    text-align: left;
-    margin-top: 16px;
+.file-description {
     font-size: 14px;
 }
 
-#previewString {
-    white-space: pre-wrap;
-    overflow-x: auto;
-    display: block;
-    padding: 10px;
-    background: #2c2c2c;
-    border: 2px solid #333;
+hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 20px 0;
+}
+
+.description-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.description-text {
+    flex: 2;
+}
+
+.description-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.texture-image {
+    width: 100%;
     border-radius: 5px;
-    margin-bottom: 0px;
+    background: #2c2c2c;
 }
 
-#previewString span {
-    font-weight: bold;
-    font-size: 18px;
-}
-
-/*  */
-
+/* Notification */
 .notification-container {
     position: fixed;
     z-index: 1000;
@@ -209,36 +143,22 @@ button:hover {
     transform: translateY(-20px);
 }
 
-.btn-blue {
-    background-color: #007bff;
-    color: white;
-    border-color: #0056b3;
+/* Scrollbar Styles */
+html::-webkit-scrollbar {
+    height: 10px;
+    background: #2c2c2c;
 }
 
-.btn-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+html::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 5px;
 }
 
-.btn-group input[type="radio"] {
-    display: none;
+html::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
-.btn-group label {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #333;
-    color: #ccc;
-    font-size: 0.8em;
-    border: 1px solid #444;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-}
-
-.btn-group input[type="radio"]:checked + label {
-    background-color: #007bff;
-    color: white;
-    border-color: #0056b3;
+html {
+    scrollbar-color: #444 #2c2c2c;
+    scrollbar-width: thin;
 }

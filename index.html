@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tm2020ch</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://cdn.xjk.yt/g/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://cdn.xjk.yt/glob/favicon.ico" type="image/x-icon">
 
     <meta property="og:title" content="Download File" />
     <meta property="og:description" content="A page to download the Chinese version of Trackmania 2020" />
@@ -18,12 +18,52 @@
     <canvas id="dotCanvas"></canvas>
 
     <div class="modal">
-        <h1>Download the Tm2020Ch setup File</h1>
+        <div class="file-info">
+            <div class="file-header">
+                <img src="exe.png" alt="File Icon" class="file-icon">
+                <div class="file-details">
+                    <h1>Trackmania2020_Setup_CH.exe</h1>
+                    <p>Executable (.exe)</p>
+                    <p>File size: 1.51 GiB</p>
+                    <p>Platform: Windows</p>
+                    <p>Released: 2020-07-02</p>
+                    <p>Uploaded: 2024-05-13 19:53:49</p>
 
-        Trackmania China is something that exists, here is a download link to the setup file. <br>
+                    <br>
 
-        <div class="flex-container input-area">
-            <button onclick="downloadFileFromURL();">💾 Download</button>
+                    <div class="share-buttons"> 
+                        <button onclick="copyToClipboard();">
+                            <img src="directLink.png" alt="Direct Download Link">
+                        </button>
+                    </div>
+                </div>
+                <button class="download-button" onclick="downloadFileFromURL();">DOWNLOAD (31.65MB)</button>
+            </div>
+            <hr>
+            <div class="file-description">
+                <h2>About Trackmania2020 Chinese edition</h2>
+                <div class="description-content">
+                    <div class="description-text">
+                        <p>
+                            The Chinese edition of Trackmania2020 was designed specifically for Chinese players. 
+                            Initially available on the Chinese Trackmania website (archive.org), the page has since 
+                            been taken down, and the game is no longer available for download.
+                            <br><br>
+                            This edition had its own servers, supported legacy logins and usernames, offline accounts, 
+                            and customizable usernames. However, only the Summer 2020 campaign and training campaign 
+                            maps are playable now. Custom maps can be played using command-line options, but only those 
+                            from around that time. There are also some texture differences in this version.
+                            <br><br>
+                            Despite these limitations, the game is still playable and enjoyable for those interested.
+                        </p>
+                    </div>
+                    <div class="description-images">
+                        <h4>There are some texture differences between the two versions, here they are:</h4>
+                        <img src="placeholder1.png" alt="Texture Difference 1" class="texture-image">
+                        <img src="placeholder2.png" alt="Texture Difference 2" class="texture-image">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -33,6 +73,14 @@
     <script src="https://cdn.xjk.yt/glob/background-dots.js"></script>
 
     <script>
+        function copyToClipboard() {
+            const directLink = "https://cdn.xjk.yt/tm2020-ch/Trackmania2020_Setup_CH.exe";
+
+            navigator.clipboard.writeText(directLink).then(() => {
+                showNotification("Direct link copied to clipboard!");
+            });
+        }
+
         function downloadFileFromURL() {
             const fileURL = "https://cdn.xjk.yt/tm2020-ch/Trackmania2020_Setup_CH.exe";
 
